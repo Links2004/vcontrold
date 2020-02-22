@@ -124,25 +124,18 @@
       <len>1</len>
       <unit>RT</unit>
       <description>Ermittle den Brennerstatus</description>
-      <device ID="20CB">
-        <addr>55D3</addr>
-        <len>1</len>
-        <unit>PR1</unit>
-      </device>
     </command>
     <command name="getBrennerStarts" protocmd="getaddr">
       <addr>088A</addr>
       <len>4</len>
       <unit>CO</unit>
       <description>Ermittle die Brennerstarts</description>
-      <device ID="2053"/>
     </command>
     <command name="setBrennerStarts" protocmd="setaddr">
       <addr>088A</addr>
       <len>2</len>
       <unit>CO</unit>
       <description>Setze die Brennerstarts</description>
-      <device ID="2053"/>
     </command>
     <command name="getBrennerStunden" protocmd="getaddr">
       <addr>08A7</addr>
@@ -161,7 +154,6 @@
       <len>2</len>
       <unit>PR3</unit>
       <description>Ermittle Anlagen Ist-Leistung</description>
-      <device ID="2053"/>
     </command>
     <command name="getVerbrauch" protocmd="getaddr">
       <addr>5726</addr>
@@ -287,14 +279,12 @@
       <len>2</len>
       <unit>PR2</unit>
       <description>Ermittle die Drehzahl der Internen Pumpe</description>
-      </device>
     </command>
     <command name="getPumpeStatusSp" protocmd="getaddr">
       <addr>6513</addr>
       <len>1</len>
       <unit>RT</unit>
       <description>Ermittle den Status der Speicherladepumpe</description>
-      </device>
     </command>
     <command name="getPumpeStatusZirku" protocmd="getaddr">
       <addr>0846</addr>
@@ -457,7 +447,6 @@
       <len>1</len>
       <unit>RT</unit>
       <description>Setze Betriebsart Party</description>
-      <device ID="2053"/>
     </command>
     <command name="getTempParty" protocmd="getaddr">
       <addr>2308</addr>
@@ -847,13 +836,6 @@
       <!-- K00_KonfiAnlagenschemaGWG_W (00) Heizkreis-Warmwasserschema Adresse
            7700 1 A1 | 1 2 A1 + WW | 2 3 M2 | 3 4 M2 + WW | 4 5 A1 + M2 | 5 6 A1 + M2
            + WW | 6 -->
-    </command>
-    <command name="get" protocmd="gettestaddr">
-      <description>Testabfrage, Adresse eingeben</description>
-      <device ID="20CB">
-        <addr>dummy</addr>
-        <len>2</len>
-      </device>
     </command>
     <command name="getUmschaltventil" protocmd="getaddr">
       <addr>0A10</addr>
