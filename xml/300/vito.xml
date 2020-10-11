@@ -112,17 +112,11 @@
       <unit>UT</unit>
       <description>Ermittle die Kesselsolltemperatur in Grad C</description>
     </command>
-    <command name="getVolStrom" protocmd="getaddr">
-      <addr>0C24</addr>
-      <len>2</len>
-      <unit>VS</unit>
-      <description>-- Ermittle den Volumenstrom l/h des Heizkreises</description>
-    </command>
     <!-- BRENNER -->
     <command name="getBrennerStatus" protocmd="getaddr">
       <addr>55D3</addr>
       <len>1</len>
-      <unit>RT</unit>
+      <unit>PR1</unit>
       <description>Ermittle den Brennerstatus</description>
     </command>
     <command name="getBrennerStarts" protocmd="getaddr">
@@ -213,7 +207,7 @@
       <description>Ermittle die Vorlaufsolltemperatur in Grad C</description>
     </command>
     <command name="getTempRL17A" protocmd="getaddr">
-      <addr>080A</addr>
+      <addr>0808</addr>
       <len>2</len>
       <unit>UT</unit>
       <description>Ermittle die Ruecklauftemperatur 17A in Grad C</description>
@@ -288,7 +282,7 @@
       <description>Ermittle den Status der Speicherladepumpe</description>
     </command>
     <command name="getPumpeStatusZirku" protocmd="getaddr">
-      <addr>0846</addr>
+      <addr>6515</addr>
       <len>1</len>
       <unit>RT</unit>
       <description>Ermittle den Status der Zirkulationspumpe</description>
