@@ -169,26 +169,26 @@
     </command>
     <!-- HEIZKURVEN -->
     <command name="getNeigung" protocmd="getaddr">
-      <addr>2305</addr>
+      <addr>27D3</addr>
       <len>1</len>
       <unit>UN</unit>
       <description>Ermittle Neigung Heizkennlinie</description>
     </command>
     <command name="getNiveau" protocmd="getaddr">
-      <addr>2304</addr>
+      <addr>27D4</addr>
       <len>1</len>
       <unit>ST</unit>
       <description>Ermittle Niveau Heizkennlinie</description>
     </command>
     <command name="setNeigung" protocmd="setaddr">
       <!-- min zul.0.2 0.1 und 0.0 nicht erlaubt -->
-      <addr>2305</addr>
+      <addr>27D3</addr>
       <len>1</len>
       <unit>UN</unit>
       <description>Setze Neigung Heizkennlinie M1</description>
     </command>
     <command name="setNiveau" protocmd="setaddr">
-      <addr>2304</addr>
+      <addr>27D4</addr>
       <len>1</len>
       <unit>ST</unit>
       <description>Setze Niveau Heizkennlinie</description>
