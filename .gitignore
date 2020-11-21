@@ -10,4 +10,3 @@ compile_commands.json
 CTestTestfile.cmake
 *.o
 src/version.h
-/.idea
