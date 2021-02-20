@@ -63,6 +63,7 @@
 char *xmlfile = XMLFILE;
 FILE *iniFD = NULL;
 int makeDaemon = 1;
+int makeFork = 1;
 int inetversion = 0;
 
 // Defined in xmlconfig.c
@@ -648,6 +649,7 @@ int main(int argc, char *argv[])
             {"username",    required_argument, 0,            'U'},
             {"groupname",   required_argument, 0,            'G'},
             {"nodaemon",    no_argument,       &makeDaemon,  0  },
+            {"nofork",      no_argument,       &makeFork  ,  0  },
             {"port",        required_argument, 0,            'p'},
             {"syslog",      no_argument,       &useSyslog,   1  },
             {"xmlfile",     required_argument, 0,            'x'},
@@ -718,6 +720,9 @@ int main(int argc, char *argv[])
             break;
         case 'n':
             makeDaemon = 0;
+            break;
+        case 'm':
+            makeFork = 0;
             break;
         case 'p':
             tcpport = atoi(optarg);
@@ -942,7 +947,7 @@ int main(int argc, char *argv[])
         vcontrol_seminit();
 
         while (1) {
-            sockfd = listenToSocket(listenfd, makeDaemon);
+            sockfd = listenToSocket(listenfd, makeFork);
             if (signal(SIGPIPE, sigPipeHandler) == SIG_ERR) {
                 logIT1(LOG_ERR, "Signal error");
                 exit(1);
@@ -952,7 +957,7 @@ int main(int argc, char *argv[])
                 interactive(sockfd, device);
                 closeSocket(sockfd);
                 setDebugFD(-1);
-                if (makeDaemon) {
+                if (makeFork) {
                     logIT(LOG_INFO, "Child process with PID %d terminated", getpid());
                     exit(0); // The child bids boodbye
                 }
