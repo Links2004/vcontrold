@@ -116,6 +116,7 @@ int opentty(char *device)
 
     tcsetattr(fd, TCSADRAIN, &newsb);
 
+#if defined(DTR_POWER)
     // DTR High for voltage supply
     int modemctl = 0;
     ioctl(fd, TIOCMGET, &modemctl);
@@ -125,7 +126,7 @@ int opentty(char *device)
         logIT(LOG_ERR, "error ioctl TIOCMSET %s:%m", device);
         exit(1);
     }
-
+#endif
     return fd;
 }
 
